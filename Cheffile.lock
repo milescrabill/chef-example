@@ -1,8 +1,14 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
+    apt (2.3.8)
     build-essential (1.4.2)
+    python (1.4.6)
+      build-essential (>= 0.0.0)
+      yum-epel (>= 0.0.0)
     yum (3.1.0)
+    yum-epel (0.3.4)
+      yum (~> 3.0)
 
 GIT
   remote: https://github.com/algas/chef-solo-cookbook-python.git
@@ -14,5 +20,7 @@ GIT
       yum (>= 0.0.0)
 
 DEPENDENCIES
+  apt (>= 0)
   chef-solo-cookbook-python (>= 0)
+  python (>= 0)
 

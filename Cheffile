@@ -16,3 +16,7 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook 'chef-solo-cookbook-python',
 	:git => 'https://github.com/algas/chef-solo-cookbook-python.git'
+
+cookbook 'python'
+
+cookbook 'apt'
