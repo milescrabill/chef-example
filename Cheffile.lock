@@ -1,0 +1,18 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    build-essential (1.4.2)
+    yum (3.1.0)
+
+GIT
+  remote: https://github.com/algas/chef-solo-cookbook-python.git
+  ref: master
+  sha: caa5cce58469204df2b847a29cd97592fd621c52
+  specs:
+    chef-solo-cookbook-python (1.2.2)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
+
+DEPENDENCIES
+  chef-solo-cookbook-python (>= 0)
+
