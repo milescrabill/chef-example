@@ -1,16 +1,12 @@
-package "python-crypto"
-package "python-pyx"
-package "tcpdump"
+ruby_block "Ensure password login" do
+  block do
+    fe = Chef::Util::FileEdit.new("/etc/ssh/sshd_config")
+    fe.insert_line_if_no_match(/PasswordAuthentication no/,
+                               "PasswordAuthentication yes")
+    fe.write_file
+  end
+end
 
-# python_virtualenv "/home/ubuntu/ve" do
-# 	interpreter "python2.5"
-# 	owner "ubuntu"
-# 	group "ubuntu"
-# 	action :create
-# end
-
-python_pip "scapy" do
- 	action :install
- 	version "2.2.0-dev"
- 	# virtualenv "/home/ubuntu/ve"
- end
+service "ssh" do
+  action :restart
+end
